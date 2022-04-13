@@ -1,4 +1,4 @@
-package com.javacode2018.springmvcseries.chat06.handler;
+package com.javacode2018.springmvcseries.chat05.handler;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

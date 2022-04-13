@@ -6,7 +6,7 @@
 
     <!--
      声明springmvc核心配置对象：DispatcherServlet,这是一个servlet
-     这个servlet的url-parttern配置的是：*.do
+     这个servlet的url-parttern配置的是：
      表示以.do结尾的请求都发送给DispatcherServlet这个servlet去处理
     -->
     <servlet>

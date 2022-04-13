@@ -17,7 +17,7 @@
     <!-- mvc的注解驱动 -->
     <mvc:annotation-driven/>
     <!-- springmvc容器（也就是一个spring容器）会扫描指定包中的组件，将其注册到springmvc容器中 -->
-    <context:component-scan base-package="com.javacode2018.springmvcseries.chat06"/>
+    <context:component-scan base-package="com.javacode2018.springmvcseries.chat05"/>
 
     <!-- interceptors用来定义拦截器，其内部可以定义多个拦截器 -->
     <mvc:interceptors>
@@ -28,7 +28,7 @@
             <!-- 用来指定拦截器排除的url，即这些url不会被拦截器拦截 -->
             <mvc:exclude-mapping path="/user/login"/>
             <!-- 用来指定拦截器 -->
-            <bean class="com.javacode2018.springmvcseries.chat06.handler.HandlerInterceptor1"/>
+            <bean class="com.javacode2018.springmvcseries.chat05.handler.HandlerInterceptor1"/>
         </mvc:interceptor>
         <!-- mvc:interceptor 标签用来定义一个拦截器 -->
         <mvc:interceptor>
@@ -37,7 +37,7 @@
             <!-- 用来指定拦截器排除的url，即这些url不会被拦截器拦截 -->
             <mvc:exclude-mapping path="/user/login"/>
             <!-- 用来指定拦截器 -->
-            <bean class="com.javacode2018.springmvcseries.chat06.handler.HandlerInterceptor2"/>
+            <bean class="com.javacode2018.springmvcseries.chat05.handler.HandlerInterceptor2"/>
         </mvc:interceptor>
     </mvc:interceptors>
 

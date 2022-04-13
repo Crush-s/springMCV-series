@@ -1,4 +1,4 @@
-package com.javacode2018.springmvcseries.chat06.controller;
+package com.javacode2018.springmvcseries.chat05.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
