@@ -10,14 +10,17 @@ public class UserController {
     public String login() {
         return "login view";
     }
+
     @RequestMapping("/add")
     public String add() {
         return "add view";
     }
+
     @RequestMapping("/del")
     public String modify() {
         return "modify view";
     }
+
     @RequestMapping("/list")
     public String list() {
         return "list view";
