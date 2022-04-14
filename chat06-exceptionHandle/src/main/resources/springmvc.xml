@@ -18,5 +18,12 @@
     <mvc:annotation-driven/>
     <!-- springmvc容器（也就是一个spring容器）会扫描指定包中的组件，将其注册到springmvc容器中 -->
     <context:component-scan base-package="com.javacode2018.springmvcseries.chat06.controller"/>
+    <!--设置全局异常处理其扫描路径-->
+    <context:component-scan base-package="com.javacode2018.springmvcseries.chat06.exceptionHandle"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 
 </beans>
