@@ -1,13 +1,6 @@
 package chat7.base;
 
 /**
- * 公众号：路人甲java，专注于java干货分享
- * 个人博客：http://itsoku.com/
- * 已推出的系列有：【spring系列】、【java高并发系列】、【MySQL系列】、【MyBatis系列】、【Maven系列】
- * git地址：https://gitee.com/javacode2018
- */
-
-/**
  * 业务异常
  */
 public class BusException extends RuntimeException {

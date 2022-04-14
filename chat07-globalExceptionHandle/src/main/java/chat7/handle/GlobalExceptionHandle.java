@@ -22,10 +22,6 @@ public class GlobalExceptionHandle {
      */
     @ExceptionHandler(BusException.class)
     public <T> ResultDto<T> doBusException(BusException e) {
-        System.out.println(e.getCode());
-        System.out.println(e.getData());
-        System.out.println(e.getMessage());
-        //return new ResultDto<T>();
         return ResultDto.error(e.getCode(), e.getMessage(), (T) e.getData());
     }
 
