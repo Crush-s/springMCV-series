@@ -8,6 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 统一异常处理类
+ *
+ * @author crush
  */
 @ControllerAdvice
 public class GlobalExceptionHandle {
@@ -16,8 +18,8 @@ public class GlobalExceptionHandle {
      * 此方法用来处理 NameException 类型的异常，
      * 当controller抛出NameException异常的时候，此方法会被调用
      *
-     * @param e
-     * @return
+     * @param e 错误
+     * @return 错误信息
      */
     @ExceptionHandler({NameException.class})
     public ModelAndView doNameException(Exception e) {
@@ -33,8 +35,8 @@ public class GlobalExceptionHandle {
      * 此方法用来处理 AgeException 类型的异常，
      * 当controller抛出NameException异常的时候，此方法会被调用
      *
-     * @param e
-     * @return
+     * @param e 错误
+     * @return 错误信息
      */
     @ExceptionHandler({PassException.class})
     public ModelAndView doPassException(Exception e) {
@@ -42,22 +44,6 @@ public class GlobalExceptionHandle {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("error");
         modelAndView.addObject("msg", "密码有误!");
-        modelAndView.addObject("e", e);
-        return modelAndView;
-    }
-
-    /**
-     * 此方法用来处理任意异常（也就是上面2个方法不能够处理的异常都会被这个方法处理）
-     *
-     * @param e
-     * @return
-     */
-    @ExceptionHandler
-    public ModelAndView doException(Exception e) {
-        System.out.println("-----doException-----");
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("error");
-        modelAndView.addObject("msg", "系统异常!");
         modelAndView.addObject("e", e);
         return modelAndView;
     }

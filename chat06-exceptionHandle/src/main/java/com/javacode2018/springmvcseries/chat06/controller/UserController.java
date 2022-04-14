@@ -29,4 +29,5 @@ public class UserController {
         modelAndView.setViewName("success");
         return modelAndView;
     }
+
 }

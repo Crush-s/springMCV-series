@@ -14,6 +14,7 @@
         <module>chat04-requestBody</module>
         <module>chat05-handlerInterceptor</module>
         <module>chat06-exceptionHandle</module>
+        <module>chat07-globalExceptionHandle</module>
     </modules>
     <packaging>pom</packaging>
 
