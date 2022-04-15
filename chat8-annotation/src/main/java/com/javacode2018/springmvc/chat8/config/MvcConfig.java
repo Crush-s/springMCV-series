@@ -39,7 +39,7 @@ public class MvcConfig implements WebMvcConfigurer {
     /**
      * 添加拦截器（可以添加多个）
      *
-     * @param registry
+     * @param registry registry
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -49,7 +49,7 @@ public class MvcConfig implements WebMvcConfigurer {
     /**
      * ④：4、配置静态资源访问处理器
      *
-     * @param registry
+     * @param registry registry
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -59,7 +59,7 @@ public class MvcConfig implements WebMvcConfigurer {
     /**
      * ⑤：5、配置文件上传解析器
      *
-     * @return
+     * @return CommonsMultipartResolver
      */
     @Bean
     public CommonsMultipartResolver multipartResolver() {
