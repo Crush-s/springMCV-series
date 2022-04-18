@@ -10,6 +10,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.util.Scanner;
+
 
 /**
  * @author crush
@@ -69,6 +71,72 @@ public class MvcConfig implements WebMvcConfigurer {
         commonsMultipartResolver.setMaxUploadSizePerFile(10 * 1024 * 1024);
         commonsMultipartResolver.setMaxUploadSize(100 * 1024 * 1024);
         return commonsMultipartResolver;
+    }
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        System.out.print("请输入年份:");
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+        boolean year;
+        System.out.print("请输入月份:");
+        Scanner s1 = new Scanner(System.in);
+        int b = s.nextInt();
+
+        int[] arr = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (((a % 4 == 0) & (a % 100 != 0)) | (a % 400 == 0)) {
+            year = true;
+            System.out.println("闰年");
+            arr[2]++;
+        } else {
+            year = false;
+            System.out.println("平年");
+        }
+        switch (b) {
+            case 1:
+                ;
+                break;
+            case 3:
+                System.out.println(a + "年的" + b + "月有" + arr[b] + "天");
+                ;
+                break;
+            case 5:
+                ;
+                break;
+            case 7:
+                ;
+                break;
+            case 8:
+                ;
+                break;
+            case 10:
+                ;
+                break;
+            case 12:
+                System.out.println(a + "年的" + b + "月有" + arr[b] + "天");
+                ;
+                break;
+            case 4:
+                System.out.println(a + "年的" + b + "月有" + arr[b] + "天");
+                ;
+                break;
+            case 6:
+                ;
+                break;
+            case 9:
+                ;
+                break;
+            case 11:
+                System.out.println(a + "年的" + b + "月有" + arr[b] + "天");
+                ;
+                break;
+            case 2:
+                System.out.println(a + "年的" + b + "月有" + arr[b] + "天");
+                ;
+                break;
+            default:
+                System.out.println("月份出错");
+        }
     }
 
 }
