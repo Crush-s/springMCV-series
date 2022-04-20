@@ -55,6 +55,13 @@
             <artifactId>commons-fileupload</artifactId>
             <version>1.4</version>
         </dependency>
+
+        <!-- 序列化工具kryo5 -->
+        <dependency>
+            <groupId>com.esotericsoftware.kryo</groupId>
+            <artifactId>kryo5</artifactId>
+            <version>5.3.0</version>
+        </dependency>
     </dependencies>
 
     <build>
