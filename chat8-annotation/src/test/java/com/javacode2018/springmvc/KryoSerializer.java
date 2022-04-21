@@ -3,11 +3,14 @@ package com.javacode2018.springmvc;
 import com.esotericsoftware.kryo.kryo5.Kryo;
 import com.esotericsoftware.kryo.kryo5.io.Input;
 import com.esotericsoftware.kryo.kryo5.io.Output;
+import lombok.Data;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class KryoSerializer {
+
+    static Double aDouble;
 
     static public void main(String[] args) throws Exception {
         Kryo kryo = new Kryo();
@@ -26,6 +29,7 @@ public class KryoSerializer {
         input.close();
     }
 
+    @Data
     static public class SomeClass {
         String value;
     }

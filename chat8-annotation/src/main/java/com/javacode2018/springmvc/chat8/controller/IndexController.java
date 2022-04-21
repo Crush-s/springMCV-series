@@ -1,9 +1,10 @@
 package com.javacode2018.springmvc.chat8.controller;
 
-import org.springframework.stereotype.Controller;
+import com.javacode2018.springmvc.chat8.interceptor.TestDouble;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class IndexController {
 
     /**
@@ -22,8 +23,11 @@ public class IndexController {
      * @return 信息
      */
     @RequestMapping("/testError")
-    public String testError() {
-        System.out.println(10 / 0);
-        return "success";
+    public TestDouble testError() {
+        TestDouble testDouble = new TestDouble();
+        testDouble.setName("123");
+        testDouble.setADouble(null);
+        return testDouble;
     }
+
 }
