@@ -18,4 +18,5 @@ public class GlobalExceptionHandler {
         modelAndView.addObject("ex", e);
         return modelAndView;
     }
+
 }
