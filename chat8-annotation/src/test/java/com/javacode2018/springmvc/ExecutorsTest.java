@@ -13,7 +13,7 @@ public class ExecutorsTest {
     public void test3() throws Exception {
 
         HashMap<String, String> stringStringHashMap = new HashMap<>();
-        stringStringHashMap.put("123","123");
+        stringStringHashMap.put("123", "123");
         System.out.println(stringStringHashMap.getOrDefault("456", "456"));
 
         // 创建异步执行任务:
@@ -38,5 +38,14 @@ public class ExecutorsTest {
         //如果执行任务异常，则get方法会把之前捕获的异常重新抛出
         System.out.println("run result->" + cf.get());
         System.out.println("main thread exit,time->" + System.currentTimeMillis());
+    }
+
+    @Test
+    public void binaryTest1() {
+        float a = 1f;
+        float b = 0.1f;
+        float f = a = b;
+        System.out.println(f);
+
     }
 }
