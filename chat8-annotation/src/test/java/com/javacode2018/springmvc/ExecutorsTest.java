@@ -46,6 +46,5 @@ public class ExecutorsTest {
         float b = 0.1f;
         float f = a = b;
         System.out.println(f);
-
     }
 }
