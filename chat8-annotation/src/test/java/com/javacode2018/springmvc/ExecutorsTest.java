@@ -39,12 +39,4 @@ public class ExecutorsTest {
         System.out.println("run result->" + cf.get());
         System.out.println("main thread exit,time->" + System.currentTimeMillis());
     }
-
-    @Test
-    public void binaryTest1() {
-        float a = 1f;
-        float b = 0.1f;
-        float f = a = b;
-        System.out.println(f);
-    }
 }
