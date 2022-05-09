@@ -38,5 +38,6 @@ public class ExecutorsTest {
         //如果执行任务异常，则get方法会把之前捕获的异常重新抛出
         System.out.println("run result->" + cf.get());
         System.out.println("main thread exit,time->" + System.currentTimeMillis());
+
     }
 }
