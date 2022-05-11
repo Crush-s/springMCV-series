@@ -16,6 +16,7 @@
         <module>chat06-exceptionHandle</module>
         <module>chat07-globalExceptionHandle</module>
         <module>chat8-annotation</module>
+        <module>chat09-requestBodyAdvice</module>
     </modules>
     <packaging>pom</packaging>
 
