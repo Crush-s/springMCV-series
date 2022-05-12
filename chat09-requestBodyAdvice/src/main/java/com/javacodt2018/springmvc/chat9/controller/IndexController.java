@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @author crush
+ * @author crush https://blog.csdn.net/HLH_2021/article/details/122785888
  */
 @RestController
 public class IndexController {
@@ -35,6 +35,7 @@ public class IndexController {
     }
 
     public static class User {
+
         private String name;
         private Integer age;
 
