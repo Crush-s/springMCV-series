@@ -17,6 +17,7 @@ public class IndexController {
      *
      * @return 首页
      */
+    
     @RequestMapping("/")
     public String index() {
         return "index";
