@@ -19,7 +19,6 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import lombok.extern.java.Log;
-import org.springframework.beans.BeanUtils;
 
 /**
  * 加密工具类
@@ -30,13 +29,15 @@ public class EncryptionUtils {
     private static String key = "abcdef0123456789";
 
     public static void main(String[] args) throws Exception {
+
+        System.out.println(
+                "\"oasdjfasldjflkads\".substring(0,5) = " + "oasdjfasldjflkads".substring(0, 5));
        /* m2();
         m1();*/
-       /* splitDataToSaveFile(929000,
-                new File(
+        /*splitDataToSaveFile(929000, new File(
                         "E:\\cache\\weixin\\Documents\\WeChat Files\\wxid_hx5fk5rxpy2v22\\FileStorage\\File\\2022-05\\nj202204.txt"),
-                "C:\\Users\\crush\\Desktop\\ertertret");*/
-
+                "C:\\Users\\crush\\Desktop\\ertertret");
+*/
         /*File src = new File("E:\\cache\\weixin\\Documents\\WeChat Files\\wxid_hx5fk5rxpy2v22\\FileStorage\\File\\2022-05\\nj202204.txt");
         String cont = read(src);
         System.out.println(cont);
@@ -126,10 +127,11 @@ public class EncryptionUtils {
             targetFile.mkdirs();
         }
 
-        try (FileInputStream fileInputStream = new FileInputStream(sourceFile);
-                InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream,
-                        StandardCharsets.UTF_16LE);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
+        try (FileInputStream fileInputStream = new FileInputStream(
+                sourceFile); InputStreamReader inputStreamReader = new InputStreamReader(
+                fileInputStream,
+                StandardCharsets.UTF_16LE); BufferedReader bufferedReader = new BufferedReader(
+                inputStreamReader)) {
             StringBuilder stringBuilder = new StringBuilder();
             String lineStr;
             int lineNo = 1, fileNum = 1;
@@ -161,12 +163,11 @@ public class EncryptionUtils {
     }
 
     private static void writeFile(String text, File file) {
-        try (
-                FileOutputStream fileOutputStream = new FileOutputStream(file);
-                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream,
-                        StandardCharsets.UTF_8);
-                BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter, 1024)
-        ) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(
+                file); OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
+                fileOutputStream,
+                StandardCharsets.UTF_8); BufferedWriter bufferedWriter = new BufferedWriter(
+                outputStreamWriter, 1024)) {
             bufferedWriter.write(text);
         } catch (IOException e) {
             e.printStackTrace();
