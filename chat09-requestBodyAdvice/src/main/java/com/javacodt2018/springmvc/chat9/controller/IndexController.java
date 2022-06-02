@@ -17,7 +17,6 @@ public class IndexController {
      *
      * @return 首页
      */
-
     @RequestMapping("/")
     public String index() {
         return "index";
@@ -36,7 +35,6 @@ public class IndexController {
     }
 
     public static class User {
-
         private String name;
         private Integer age;
 
