@@ -29,6 +29,7 @@ public class EncryptionUtils {
     private static String key = "abcdef0123456789";
 
     public static void main(String[] args) throws Exception {
+
         System.out.println(
                 "\"oasdjfasldjflkads\".substring(0,5) = " + "oasdjfasldjflkads".substring(0, 5));
        /* m2();
