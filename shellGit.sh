@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# 引入发送电子邮件脚本
+source /usr/local/sendEmail/shellList/test.sh
+
 # 存放文件的路径
 # 采集一个函数
 readDir() {
@@ -22,15 +25,33 @@ readDir() {
   done
 }
 
+# git相关操作
+gitOperation() {
+	# 定义commit信息
+	msg=$(date "+%Y.%m.%d")
+	git add -A
+	git commit -m"${msg}"
+	git pull
+	if [ $? -eq 0 ]; then
+	        echo "git pull 执行成功"
+	else
+	        echo "git pull 执行失败"
+	        # 发送失败邮件
+	        failPull
+	fi
+	git status
+	git push origin master
+	if [ $? -eq 0 ]; then
+	        echo "git push 执行成功"
+	        successPush
+	else
+	        echo "git push 执行失败"
+	        # 发送失败邮件
+	        failPush
+	fi
+}
+
 # 调用函数，传入顶级目录为/root
-readDir /home/shellGITHUB/waitForfile
-
-
-msg=$(date "+%Y.%m.%d")
-   git add -A
-   git commit -m"${msg}"
-   git pull
-   git status
-   git push origin master 
-
-
+#readDir /home/shellGITHUB/waitForfile
+# 调用git相关函数
+gitOperation
