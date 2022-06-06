@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 引入发送电子邮件脚本
-source /usr/local/sendEmail/shellList/test.sh
+source /home/shellGITHUB/shellAll/shellEmail.sh
 
 # 存放文件的路径
 # 采集一个函数
@@ -52,6 +52,6 @@ gitOperation() {
 }
 
 # 调用函数，传入顶级目录为/root
-#readDir /home/shellGITHUB/waitForfile
+readDir /home/shellGITHUB/waitForfile
 # 调用git相关函数
 gitOperation
