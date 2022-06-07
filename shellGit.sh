@@ -38,6 +38,7 @@ gitOperation() {
 	echo "git status 执行成功" >> /home/shellGITHUB/shellAll/log.txt
 	/usr/bin/git push origin master
 	echo "git push 执行成功" >> /home/shellGITHUB/shellAll/log.txt
+	successPush
 }
 
 echo $(date "+%Y.%m.%d")开始 >> /home/shellGITHUB/shellAll/log.txt
