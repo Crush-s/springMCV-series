@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 source /etc/profile
 source ~/.bash_profile
 # 引入发送电子邮件脚本
@@ -20,7 +20,7 @@ readDir() {
     else
       echo "$path"
       cp $path /home/shellGITHUB/project/springMCV-series/chat01-helloword/src/main/java/com/javacode2018/springmvcseries/chat01
-      rm $path
+      rm -r -f $path
       break
     fi
   done
