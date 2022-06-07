@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 source /etc/profile
 source ~/.bash_profile
 # 引入发送电子邮件脚本
