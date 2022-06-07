@@ -1,5 +1,6 @@
-#!/bin/sh
-
+#!/bin/bash
+source /etc/profile
+source ~/.bash_profile
 # 引入发送电子邮件脚本
 source /home/shellGITHUB/shellAll/shellEmail.sh
 
@@ -31,27 +32,18 @@ gitOperation() {
 	msg=$(date "+%Y.%m.%d")
 	git add -A
 	git commit -m"${msg}"
+	echo "git commit 执行成功" >> /home/shellGITHUB/shellAll/log.txt
 	git pull
-	if [ $? -eq 0 ]; then
-	        echo "git pull 执行成功"
-	else
-	        echo "git pull 执行失败"
-	        # 发送失败邮件
-	        failPull
-	fi
+	echo "git pull 执行成功" >> /home/shellGITHUB/shellAll/log.txt
 	git status
+	echo "git status 执行成功" >> /home/shellGITHUB/shellAll/log.txt
 	git push origin master
-	if [ $? -eq 0 ]; then
-	        echo "git push 执行成功"
-	        successPush
-	else
-	        echo "git push 执行失败"
-	        # 发送失败邮件
-	        failPush
-	fi
+	echo "git push 执行成功" >> /home/shellGITHUB/shellAll/log.txt
 }
 
+echo $(date "+%Y.%m.%d")开始 >> /home/shellGITHUB/shellAll/log.txt
 # 调用函数，传入顶级目录为/root
 readDir /home/shellGITHUB/waitForfile
+echo "复制文件结束！"  >> /home/shellGITHUB/shellAll/log.txt
 # 调用git相关函数
 gitOperation
