@@ -1,6 +1,5 @@
 #!/bin/bash
-source /etc/profile
-source ~/.bash_profile
+
 # 引入发送电子邮件脚本
 source /home/shellGITHUB/shellAll/shellEmail.sh
 
@@ -30,14 +29,14 @@ readDir() {
 gitOperation() {
 	# 定义commit信息
 	msg=$(date "+%Y.%m.%d")
-	git add -A
-	git commit -m"${msg}"
+	/usr/bin/git add -A
+	/usr/bin/git commit -m"${msg}"
 	echo "git commit 执行成功" >> /home/shellGITHUB/shellAll/log.txt
-	git pull
+	/usr/bin/git pull
 	echo "git pull 执行成功" >> /home/shellGITHUB/shellAll/log.txt
-	git status
+	/usr/bin/git status
 	echo "git status 执行成功" >> /home/shellGITHUB/shellAll/log.txt
-	git push origin master
+	/usr/bin/git push origin master
 	echo "git push 执行成功" >> /home/shellGITHUB/shellAll/log.txt
 }
 
