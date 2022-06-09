@@ -1,5 +1,6 @@
 #!/bin/bash
-
+source /etc/profile
+export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 # 引入发送电子邮件脚本
 source /home/shellGITHUB/shellAll/shellEmail.sh
 
@@ -29,19 +30,27 @@ readDir() {
 gitOperation() {
 	# 定义commit信息
 	msg=$(date "+%Y.%m.%d")
-	/usr/bin/git add -A
-	/usr/bin/git commit -m"${msg}"
+	git add -A
+	git commit -m"${msg}"
 	echo "git commit 执行成功" >> /home/shellGITHUB/shellAll/log.txt
-	/usr/bin/git pull
-	echo "git pull 执行成功" >> /home/shellGITHUB/shellAll/log.txt
-	/usr/bin/git status
+	git pull
+	if [$? -ne 0]; then 
+		failPull
+	else
+		echo "git pull执行成功！" >> /home/shellGITHUB/shellAll/log.txt
+	fi
+	git status
 	echo "git status 执行成功" >> /home/shellGITHUB/shellAll/log.txt
-	/usr/bin/git push origin master
-	echo "git push 执行成功" >> /home/shellGITHUB/shellAll/log.txt
-	successPush
+	git push origin master
+	if [$? -ne 0]; then
+                echo "git push 执行成功" >> /home/shellGITHUB/shellAll/log.txt
+        else
+		successPush
+        fi
 }
 
-echo $(date "+%Y.%m.%d")开始 >> /home/shellGITHUB/shellAll/log.txt
+cd /home/shellGITHUB/project/springMCV-series/
+echo $(date "+%Y.%m.%d %h.%m.%s") 开始 >> /home/shellGITHUB/shellAll/log.txt
 # 调用函数，传入顶级目录为/root
 readDir /home/shellGITHUB/waitForfile
 echo "复制文件结束！"  >> /home/shellGITHUB/shellAll/log.txt
