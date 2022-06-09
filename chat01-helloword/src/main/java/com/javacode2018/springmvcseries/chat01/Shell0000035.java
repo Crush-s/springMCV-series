@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-public class Shell0000003 implements Map {
+public class Shell0000035 implements Map {
 
     private String string1;
     private String string2;
