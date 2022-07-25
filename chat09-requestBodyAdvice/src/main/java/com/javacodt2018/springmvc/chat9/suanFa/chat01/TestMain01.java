@@ -15,7 +15,7 @@ public class TestMain01 {
         int low = 0;
         int high = args.length - 1;
 
-        while (low < high) {
+        while (low <= high) {
             int mid = (low + high) / 2;
             String x = args[mid];
             System.out.println("mid = " + mid);
